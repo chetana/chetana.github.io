@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>BigDecimal :: Java Docs</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">Java Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="java" data-version="1.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Java</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">À propos de Java</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-features.html">Caractéristiques</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-history.html">Historique</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-use-cases.html">Domaines d&#8217;application</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-editions.html">Éditions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-evolution-support.html">Évolution et Support des différentes versions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-versions.html">Versions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-resources.html">Ressources</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">How To</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../how-to/java-installation.html">Install Java</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../how-to/java-command-line.html">Command Line</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Bases de Java</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../java-application-basics-concepts.html">Concepts basiques d&#8217;une application Java</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../java-keywords.html">Mots-clés Java</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Types</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-primitive-types.html">Types primitifs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-object-types.html">Types objets</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-operators.html">Opérateurs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-arrays.html">Tableaux</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-strings.html">Strings</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-enums.html">Enums</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="java-big-decimal.html">Big Decimal</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../oop/java-core-principles.html">Programmation Orientée Objet</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-access-modifiers.html">Modificateurs d&#8217;accès</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-class-members.html">Classes, Variables et Méthodes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-pass-by-value.html">Passage des paramètres par valeur</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-overloading.html">Overloading</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-overriding.html">Overriding</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-constructors.html">Constructeurs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-data-encapsulation.html">Encapsulation des données</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#oop/java-object-composition.adoc">Composition objet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-inheritance.html">Héritage</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-abstract.html">Classes et Méthode Abstraites</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-interface.html">Interface</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-polymorphism.html">Polymorphisme</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-object-methods.html">La classe Object</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Exceptions</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../exceptions/java-reliable-program.html">Fiabilité d&#8217;une application Java</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../exceptions/java-exceptions.html">Gestion des erreurs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../exceptions/java-try-catch.html">Patterns try-catch</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Java</span>
+    <span class="version">1.0</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Java</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">1.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Java</a></li>
+    <li>Bases de Java</li>
+    <li>Types</li>
+    <li><a href="java-big-decimal.html">Big Decimal</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">BigDecimal</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Represents an immutable arbitrary-precision signed decimal number</p>
+</li>
+<li>
+<p>2 parties :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>unscaled value</strong> - an arbitrary precision signed decimal number (3.14 &#8658; 314)</p>
+</li>
+<li>
+<p><strong>scale</strong> - a 32 bit integer representing the number of digits to the right decimal point (3.14 &#8658; 2)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_operations"><a class="anchor" href="#_operations"></a>Operations</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>doesn&#8217;t overload the arithmetic (+,-,*,/) or logical (&gt;,&lt;) operators</p>
+</li>
+<li>
+<p>Provides :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Arithmetic and comparison operations</p>
+</li>
+<li>
+<p>Scale manipulation</p>
+</li>
+<li>
+<p>Rounding and format conversion</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Rounding a number : replace it with another having shorter, simpler and more meaningful representation
+(ex: $24,784917 to $24,78)</p>
+</li>
+<li>
+<p><em>RoundingMode</em> with 8 levels</p>
+</li>
+<li>
+<p><em>MathContext</em> (encapsulates both precision and rounding mode)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_use_cases"><a class="anchor" href="#_use_cases"></a>Use cases</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>High precision arithmetic</p>
+</li>
+<li>
+<p>Calculations requiring control over scale and rounding off behaviors (financial transactions)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_examples"><a class="anchor" href="#_examples"></a>Examples</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Create BigDecimal with new BigDecimal()
+BigDecimal bdFromString = new BigDecimal("0.1"); // 0.1
+BigDecimal bdFromCharArray = new BigDecimal(new char[] { '3','.','1','6','1','5' }); // 3.1615
+BigDecimal bdFromInt = new BigDecimal(42); // 42
+BigDecimal bdFromLong = new BigDecimal(123412345678901L); // 123412345678901
+
+BigInteger bigInteger = new BigDecimal("0.1");
+BigDecimal bdFromBigInteger = new BigDecimal(bigInteger);
+
+BigDecimal bdFromDouble = new BigDecimal(0.1d); // different from 0.1
+// this is because :
+// the double constructor does an exact translation
+// 0.1 does not have an exact representation in double
+=&gt; should use the String constructor instead of the double constructor
+
+// Creation BigDecimal with valueOf (for long and double)
+// this method converts double to its String representation before converting to BigDecimal and may reuse object instances
+BigDecimal bdFromLong1 = BigDecimal.valueOf(123412345678901L); // 123412345678901
+BigDecimal bdFromLong2 = BigDecimal.valueOf(123412345678901L, 2); // 123412345678901.01
+BigDecimal bdFromLong1 = BigDecimal.valueOf(0.1); // 0.1
+
+// operations
+// logical
+@Test
+public void whenGettingAttributes_thenExpectedResult() {
+	BigDecimal bd = new BigDecimal("-12345.6789");
+	assertEquals(9, bd.precision());
+	assertEquals(4, bd.scale());
+	assertEquals(-1, bd.signum());
+}
+
+// compare the value of 2 BD using the compareTo :
+// ignore the scale
+BigDecimal bd1 = new BigDecimal("1.0");
+BigDecimal bd2 = new BigDecimal("1.00");
+BigDecimal bd3 = new BigDecimal("2.0");
+
+assertTrue(bd1.compareTo(bd3) &lt; 0);
+assertTrue(bd1.compareTo(bd3) != 0);
+assertTrue(bd1.compareTo(bd2) == 0);
+
+// equals : equal in value and scale
+assertFalse(bd1.equals(bd2) == 0);
+
+// arithmetic
+BigDecimal bd1 = new BigDecimal("4.0");
+BigDecimal bd1 = new BigDecimal("2.0");
+
+BigDecimal sum = bd1.add(bd2); // 6.0
+BigDecimal difference = bd1.substract(bd2); // 2.0
+BigDecimal quotient = bd1.divide(bd2); // 2.0
+BigDecimal product = bd1.multiply(bd2); // 8.0
+
+// Rounding
+BigDecimal bd = new BigDecimal("2.5");
+BigDecimal rounded = bd.round(new MathContext(1,RoundingMode.HALF_EVEN));
+	assertEquals("2", rounded.toString());
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

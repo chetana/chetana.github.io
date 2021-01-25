@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Exceptions : gestion des erreurs en Java :: Java Docs</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">Java Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="java" data-version="1.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Java</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">À propos de Java</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-features.html">Caractéristiques</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-history.html">Historique</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-use-cases.html">Domaines d&#8217;application</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-editions.html">Éditions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-evolution-support.html">Évolution et Support des différentes versions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-versions.html">Versions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-resources.html">Ressources</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">How To</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../how-to/java-installation.html">Install Java</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../how-to/java-command-line.html">Command Line</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Bases de Java</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../java-application-basics-concepts.html">Concepts basiques d&#8217;une application Java</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../java-keywords.html">Mots-clés Java</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Types</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../types/java-primitive-types.html">Types primitifs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../types/java-object-types.html">Types objets</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../types/java-operators.html">Opérateurs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../types/java-arrays.html">Tableaux</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../types/java-strings.html">Strings</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../types/java-enums.html">Enums</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../types/java-big-decimal.html">Big Decimal</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../oop/java-core-principles.html">Programmation Orientée Objet</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-access-modifiers.html">Modificateurs d&#8217;accès</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-class-members.html">Classes, Variables et Méthodes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-pass-by-value.html">Passage des paramètres par valeur</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-overloading.html">Overloading</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-overriding.html">Overriding</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-constructors.html">Constructeurs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-data-encapsulation.html">Encapsulation des données</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#oop/java-object-composition.adoc">Composition objet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-inheritance.html">Héritage</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-abstract.html">Classes et Méthode Abstraites</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-interface.html">Interface</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-polymorphism.html">Polymorphisme</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-object-methods.html">La classe Object</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Exceptions</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-reliable-program.html">Fiabilité d&#8217;une application Java</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="java-exceptions.html">Gestion des erreurs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-try-catch.html">Patterns try-catch</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Java</span>
+    <span class="version">1.0</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Java</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">1.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Java</a></li>
+    <li>Bases de Java</li>
+    <li>Exceptions</li>
+    <li><a href="java-exceptions.html">Gestion des erreurs</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Exceptions : gestion des erreurs en Java</h1>
+<div class="sect1">
+<h2 id="_erreurs_en_java"><a class="anchor" href="#_erreurs_en_java"></a>Erreurs en Java</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Il existe 3 catégories d&#8217;erreur en Java.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Catégories d&#8217;erreurs en Java</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Catégorie</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Bugs</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>lecture du 11ème élément d&#8217;un tableau de 10 cases</p>
+</li>
+<li>
+<p>invocation d&#8217;une méthode sur un pointeur null</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Runtime/JVM</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>une application qui demande + de mémoire que la JVM ne peut fournir</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Erreurs auxquelles on peut s&#8217;attendre</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>à anticiper !</p>
+</li>
+<li>
+<p>FS : ne pas permettre à une personne externe de modifier les droits d&#8217;une partition</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_comment_sont_modélisés_ces_erreurs_en_java"><a class="anchor" href="#_comment_sont_modélisés_ces_erreurs_en_java"></a>Comment sont modélisés ces erreurs en Java ?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Throwable</strong> : classe fondamentale qui modélise des erreurs et qui comporte 3 propriétés :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>message d’erreur</strong> : <em>getMessage()</em></p>
+</li>
+<li>
+<p><strong>stack trace</strong> = l’enchaînement des appels de méthodes qui ont généré l’erreur : <em>printStackTrace()</em></p>
+</li>
+<li>
+<p><strong>root cause</strong> : erreur responsable en amont de notre erreur (optionnelle)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Ne pas oublier de la garder dans la journalisation pour le debug</p>
+</li>
+<li>
+<p>exemple: quand on lance une exception custom &#8658; il faut pouvoir garder les informations de message et de stack trace de l’erreur en amont, c&#8217;est-à-dire l’exception primaire = root cause</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">try {} catch(IOException | NumberFormatException e)
+throw new ApplicationException(e) // e est la root cause</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+La stacktrace d&#8217;une exception est créée au moment où on crée l&#8217;exception, c&#8217;est-à-dire à la ligne du new !
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Il faut toujours créer l&#8217;exception à l&#8217;endroit où on la jette ! // toujours faire throw new &lt;exception&gt;
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Pour représenter les différentes catégories d&#8217;erreurs, il y a plusieurs classes qui étendent Throwable.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Extensions de Throwable</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Classe</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Exemples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Error (thrown by the JVM)</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>modélise les erreurs du runtime Java, au niveau de la JVM</p>
+</li>
+<li>
+<p>something went so wrong that the program should not attempt to recover</p>
+</li>
+<li>
+<p>pas de gestion explicite &#8658; <strong>unchecked exceptions</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>OutOfMemoryError</p>
+</li>
+<li>
+<p>StackOverflowError : infinite recursion (une méthode qui n&#8217;arrête pas de s&#8217;appeler)</p>
+</li>
+<li>
+<p>NoClassDefFoundError (code available at compile time but not at runtime)</p>
+</li>
+<li>
+<p>ExceptionInInitializerError (when a static init throws an exception)</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Exception (thrown by the programmer or the JVM)</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>erreurs que l&#8217;on peut anticiper</p>
+</li>
+<li>
+<p>include exceptions and all subclasses that don&#8217;t extend runtime exceptions</p>
+</li>
+<li>
+<p>doivent être gérées explicitement &#8658; <strong>checked exceptions</strong> (cf Gestion d&#8217;une exception en Java)</p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>IOException : problèmes d&#8217;entrée/sortie, accès réseau</p>
+</li>
+<li>
+<p>FileNotFoundException : accès disque (fichier non trouvé)</p>
+</li>
+<li>
+<p>SQLException : commandes SQL à la base qui analyse et génère une erreur</p>
+</li>
+<li>
+<p>ParseException</p>
+</li>
+<li>
+<p>ClassNotFoundException</p>
+</li>
+<li>
+<p>NotSerializableException</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>RuntimeException (thrown by the programmer or the JVM)</strong></p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>extends Exception</p>
+</li>
+<li>
+<p>concerne les bugs</p>
+</li>
+<li>
+<p>unexpected but not necessarily fatal</p>
+</li>
+<li>
+<p>pas de gestion explicite &#8658; <strong>unchecked exceptions</strong></p>
+</li>
+</ul>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
+<ul>
+<li>
+<p>NullPointerException : invocation d&#8217;une méthode au travers d&#8217;un pointer null</p>
+</li>
+<li>
+<p>IndexOutOfBoundsException</p>
+</li>
+<li>
+<p>ArrayIndexOutOfBoundsException : lire au delà de la limite d&#8217;un tableau</p>
+</li>
+<li>
+<p>ArithmeticException : division des entiers par 0</p>
+</li>
+<li>
+<p>ClassCastException</p>
+</li>
+<li>
+<p>NoSuchElementException</p>
+</li>
+<li>
+<p>DateTimeException</p>
+</li>
+<li>
+<p>MissingRessourceException</p>
+</li>
+<li>
+<p>ArrayStoreException</p>
+</li>
+<li>
+<p>IllegalArgumentException (by programmer)</p>
+</li>
+<li>
+<p>NumberFormatException (by programmer)</p>
+</li>
+<li>
+<p>IllegalStateException (by programmer)</p>
+</li>
+<li>
+<p>UnsupportedOperationException (by programmer)</p>
+</li>
+</ul>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="_gestion_dune_exception_en_java"><a class="anchor" href="#_gestion_dune_exception_en_java"></a>Gestion d&#8217;une exception en Java</h3>
+<div class="paragraph">
+<p>Lorsqu&#8217;on doit gérer explicitement une exception, il faut écrire du code spécifique à cette exception. 2 approches sont possibles :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>attraper l’exception et la traiter localement</strong> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>pattern try-catch</strong> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>on met dans le try le code susceptible de lancer une exception</p>
+</li>
+<li>
+<p>on la saisit avec le catch pour faire nos traitements</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>transmettre l’exception au code qui m’appelle</strong> (= jeu de la patate chaude)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>je ne sais pas comment gérer l’exception</p>
+</li>
+<li>
+<p>j’informe simplement la méthode qui m’appelle qui va elle-même prendre une décision</p>
+</li>
+<li>
+<p>utiliser le keyword throws : <strong>[method] throws [exception]</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<strong>Quand utiliser l’une ou l’autre ?</strong>
+généralement quand on se trouve dans une méthode de bas niveau, il est difficile de savoir ce que l’on peut faire avec une exception &#8658; la transmettre jusqu’à se retrouver dans un code de niveau suffisant qui va pouvoir donner un sens métier à cette exception pour soit signaler à l’utilisateur soit retourner un comportement par défaut ou encore retourner une exception propre à notre processus métier.
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">public void ohNo throws IOException {
+	// on a le droit de ne rien throw
+	// on a le droit de throw n’importe quelle runtime
+	// on a le droit de throw une exception en dessous
+	// on ne peut pas throw une Exception car au dessus de IOException
+}
+
+/**
+Le code suivant compile car, bien que l'exception ne soit pas propagée par la méthode dans la classe parent, c'est une exception non checkée et donc elle n'apparait pas forcément dans la signature (mais elle peut). Toute méthode est susceptible de lancer une exception non checkée sans forcément le mentionner
+*/
+
+class Hopper {
+    public void hop() {}
+}
+
+class Bunny extends Hopper {
+    public void hop() throws IllegalStateException {} // COMPILES
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

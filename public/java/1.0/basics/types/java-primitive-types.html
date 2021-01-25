@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Types primitifs :: Java Docs</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">Java Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="java" data-version="1.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Java</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">À propos de Java</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-features.html">Caractéristiques</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-history.html">Historique</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-use-cases.html">Domaines d&#8217;application</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-editions.html">Éditions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-evolution-support.html">Évolution et Support des différentes versions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-versions.html">Versions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-resources.html">Ressources</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">How To</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../how-to/java-installation.html">Install Java</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../how-to/java-command-line.html">Command Line</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Bases de Java</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../java-application-basics-concepts.html">Concepts basiques d&#8217;une application Java</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../java-keywords.html">Mots-clés Java</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Types</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="java-primitive-types.html">Types primitifs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-object-types.html">Types objets</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-operators.html">Opérateurs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-arrays.html">Tableaux</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-strings.html">Strings</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-enums.html">Enums</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-big-decimal.html">Big Decimal</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../oop/java-core-principles.html">Programmation Orientée Objet</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-access-modifiers.html">Modificateurs d&#8217;accès</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-class-members.html">Classes, Variables et Méthodes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-pass-by-value.html">Passage des paramètres par valeur</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-overloading.html">Overloading</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-overriding.html">Overriding</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-constructors.html">Constructeurs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-data-encapsulation.html">Encapsulation des données</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#oop/java-object-composition.adoc">Composition objet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-inheritance.html">Héritage</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-abstract.html">Classes et Méthode Abstraites</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-interface.html">Interface</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-polymorphism.html">Polymorphisme</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-object-methods.html">La classe Object</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Exceptions</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../exceptions/java-reliable-program.html">Fiabilité d&#8217;une application Java</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../exceptions/java-exceptions.html">Gestion des erreurs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../exceptions/java-try-catch.html">Patterns try-catch</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Java</span>
+    <span class="version">1.0</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Java</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">1.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Java</a></li>
+    <li>Bases de Java</li>
+    <li>Types</li>
+    <li><a href="java-primitive-types.html">Types primitifs</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Types primitifs</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>De base, tout nombre déclaré en Java est un <strong>int</strong> et ceux à virgule un <strong>double</strong>.
+* 8 built-in primitives
+* base :
+<strong> octal (017) // 8*1 + 7 = 15
+</strong> hexa (0x1F) // 31
+** binary (0b11) // 3</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Java Primitives Types</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Size</th>
+<th class="tableblock halign-left valign-top">Range</th>
+<th class="tableblock halign-left valign-top">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean (valeur logique : true ou false)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 bit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true/false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">byte (octet signé)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8 bits</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[-128, 127]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">short (entier court signé)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16 bits</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[-32,768 32,767]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">char (caractère Unicode) (use case = last key pressed by user in a game)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16 bits</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['\u0000', '\uffff'] or [0, 65535]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">'\u0000'</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int (entier signé)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32 bits</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[-2,147,483,648 to 2,147,483,647]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">long (entier long)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64 bits</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[-2^63, 2^63-1]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">float (virgule flottante simple précision (IEEE754))</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32 bits</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">32-bit IEEE 754 floating-point</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">double (virgule flottante double précision (IEEE754))</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64 bits</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">64-bit IEEE 754 floating-point</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0.0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_complément_à_2"><a class="anchor" href="#_complément_à_2"></a>Complément à 2</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Les int sont encodés sur 32 bits dans ce qu&#8217;on appelle le complément à 2.
+* 0b 0001 &#8594; 1
+* 0b 0000 &#8594; 0
+* pour -1, je dois prendre le complément de 1 (les 0 deviennent des 1 et les 1 des 0) et j&#8217;ajoute 1
+** 0b 1110 + 1 &#8658; 0b 1111 &#8594; -1</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_nombres_à_virgule_flottante_nombres_réels"><a class="anchor" href="#_nombres_à_virgule_flottante_nombres_réels"></a>Nombres à virgule flottante = nombres réels</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Les float sont encodés sur 32 bits et cet élément de 32 bits va être considéré comme un mot :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>23 bits : mantisse</p>
+</li>
+<li>
+<p>8 bits : exposant</p>
+</li>
+<li>
+<p>1 bit : signe de ce nombre flottant
+<a href="https://blog.netinfluence.ch/2009/09/24/comprendre-les-nombres-a-virgule-flottante/">Virgule Flottante
+https://www.exploringbinary.com/why-0-point-1-does-not-exist-in-floating-point/
+https://florian.cassayre.me/articles/float</a>
+<a href="https://www.youtube.com/watch?v=zcv7DvHYafA">Convertir un nombre à virgule en binaire</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>utilisés lors de l&#8217;évaluation d&#8217;expressions nécessitant une précision fractionnaire</p>
+</li>
+<li>
+<p><strong>les calculs sont rapides mais non précis !</strong> &#8658; dans le cas de calculs nécessitant une haute précision ou d&#8217;arrondi (transactions financières) utiliser <strong>BigDecimal</strong> !</p>
+</li>
+<li>
+<p>float est une virgule flottante IEE 754 32 bits simple précision</p>
+</li>
+<li>
+<p>double est une virgule flottante IEE 754 32 bits double précision</p>
+<div class="ulist">
+<ul>
+<li>
+<p>les nombres décimaux comme 0.1 n&#8217;existent pas en nombre à virgule flottante car la plupart de ces nombres ont une représentation binaire (base 2) infinie &#8658; un double n&#8217;aura jamais une représentation exacte de 0.1 !</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conversions_cast"><a class="anchor" href="#_conversions_cast"></a>Conversions - Cast</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Implicite</strong> (Numeric Promotion) : l&#8217;opérateur décide de la conversion à faire en fonction de la nature de l&#8217;opérande :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>à condition qu&#8217;il y ait élargissement du domaine</p>
+</li>
+<li>
+<p>nombre décimal en <strong>double</strong> sauf si on met un F</p>
+</li>
+<li>
+<p>le résultat sera calculé après conversion !</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Overflow</dt>
+<dd>
+<p>put a value larger than the maximum in Java</p>
+</dd>
+<dt class="hdlist1">Underflow</dt>
+<dd>
+<p>put a value smaller than the minimum in Java</p>
+</dd>
+</dl>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Primitive types promotion</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Promotion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">float</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">double</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">long</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">float / double</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">long / float / double</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">short</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int / long / float / double</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">char</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">int / long / float / double</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_wrapper_types"><a class="anchor" href="#_wrapper_types"></a>Wrapper Types</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Classes prédéfinies donnant un look objet aux types primitifs</p>
+</li>
+<li>
+<p><strong>Boxing</strong></p>
+</li>
+<li>
+<p><strong>Unboxing</strong></p>
+</li>
+<li>
+<p><strong>Auto-boxing</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Integer.parseInt() &#8594; int
+Integer.valueOf() &#8594; Integer</p>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

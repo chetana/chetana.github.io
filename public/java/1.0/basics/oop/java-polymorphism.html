@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Polymorphisme :: Java Docs</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">Java Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="java" data-version="1.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Java</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">À propos de Java</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-features.html">Caractéristiques</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-history.html">Historique</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-use-cases.html">Domaines d&#8217;application</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-editions.html">Éditions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-evolution-support.html">Évolution et Support des différentes versions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-versions.html">Versions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-resources.html">Ressources</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">How To</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../how-to/java-installation.html">Install Java</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../how-to/java-command-line.html">Command Line</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Bases de Java</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../java-application-basics-concepts.html">Concepts basiques d&#8217;une application Java</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../java-keywords.html">Mots-clés Java</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Types</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../types/java-primitive-types.html">Types primitifs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../types/java-object-types.html">Types objets</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../types/java-operators.html">Opérateurs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../types/java-arrays.html">Tableaux</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../types/java-strings.html">Strings</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../types/java-enums.html">Enums</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../types/java-big-decimal.html">Big Decimal</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="java-core-principles.html">Programmation Orientée Objet</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-access-modifiers.html">Modificateurs d&#8217;accès</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-class-members.html">Classes, Variables et Méthodes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-pass-by-value.html">Passage des paramètres par valeur</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-overloading.html">Overloading</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-overriding.html">Overriding</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-constructors.html">Constructeurs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-data-encapsulation.html">Encapsulation des données</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#oop/java-object-composition.adoc">Composition objet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-inheritance.html">Héritage</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-abstract.html">Classes et Méthode Abstraites</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-interface.html">Interface</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="java-polymorphism.html">Polymorphisme</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-object-methods.html">La classe Object</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Exceptions</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../exceptions/java-reliable-program.html">Fiabilité d&#8217;une application Java</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../exceptions/java-exceptions.html">Gestion des erreurs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../exceptions/java-try-catch.html">Patterns try-catch</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Java</span>
+    <span class="version">1.0</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Java</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">1.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Java</a></li>
+    <li>Bases de Java</li>
+    <li><a href="java-core-principles.html">Programmation Orientée Objet</a></li>
+    <li><a href="java-polymorphism.html">Polymorphisme</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Polymorphisme</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Le polymorphisme est la capacité, pour un même message, de correspondre à plusieurs formes de traitements selon l&#8217;objet auquel ce message est adressé. <strong>La gestion du polymorphisme est assurée par la machine virtuelle dynamiquement à l&#8217;exécution.</strong></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_le_transtypage_induit_par_lhéritage_facilite_le_polymorphisme"><a class="anchor" href="#_le_transtypage_induit_par_lhéritage_facilite_le_polymorphisme"></a>Le transtypage induit par l&#8217;héritage facilite le polymorphisme</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>L&#8217;héritage définit un cast implicite de la classe fille vers la classe mère : <strong>on peut affecter à une référence d&#8217;une classe n&#8217;importe quel objet d&#8217;une de ses sous-classes.</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Exemple : la classe Employe hérite de la classe Personne
+    Personne p = new Personne ("Dupond", "Jean");
+    Employe e = new Employe("Durand", "Julien", 10000);
+    p = e ; // ok : Employe est une sous-classe de Personne
+    Objet obj;
+    obj = e ; // ok : Employe hérite de Personne qui elle même hérite de Object</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_une_interface_sert_à_définir_un_supertype"><a class="anchor" href="#_une_interface_sert_à_définir_un_supertype"></a>Une interface sert à définir un supertype</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>L&#8217;implémentation d&#8217;une interface définit un cast implicite de la classe fille vers cette interface.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_façons_daccéder_à_un_objet"><a class="anchor" href="#_façons_daccéder_à_un_objet"></a>Façons d&#8217;accéder à un objet</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>A Java object may be accessed with :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>a reference of the same type ;</p>
+</li>
+<li>
+<p>a reference that is a superclass ;</p>
+</li>
+<li>
+<p>a reference that defines an interface the object implements.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The object type determines which properties exist within the object in memory.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The reference type to the object determines which methods and variables are accessible to the Java program.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_virtual_method"><a class="anchor" href="#_virtual_method"></a>Virtual method</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Method in which the specific implementation is not determined until runtime</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">// Lorsqu'un objet a été affecté à une référence d'un autre type, seuls les membres accessibles au type de cette nouvelle référence sont disponibles.
+// Par exemple, dans le code suivant, on ne peut plus accéder aux propriétés de la classe Lemur avec l'objet lemurAsObject :
+
+public class Lemur {
+    public String name = "titi";
+    public static void main(String[] args) {
+        Lemur lemur = new Lemur();
+        System.out.println(lemur.name); // titi
+        Object lemurAsObject = lemur;
+        System.out.println(lemurAsObject.name); // DOES NOT COMPILE
+    }
+}
+
+// Si on appelle une méthode virtuelle sur un objet qui redéfinit une méthode, la méthode redéfinie est appelée même si l'appel est fait sur une référence de type de la classe parent ou si l'appel est fait au sein de la classe parent :
+public class Bird {
+    public String getName() {
+        return "Unknown";
+    }
+    public void displayInformation() {
+        System.out.println("The bird name is : " + getName());
+    }
+}
+
+public class Peacock extends Bird {
+    public String getName() {
+        return "Peacock";
+    }
+
+    public static void main(String[] args) {
+        Bird bird = new Peacock();
+        bird.displayInformation(); // The bird name is : Peacock
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Strings :: Java Docs</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../../_/css/site.css">
+    <script>var uiRootPath = '../../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../../..">Java Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="java" data-version="1.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../index.html">Java</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">À propos de Java</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-features.html">Caractéristiques</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-history.html">Historique</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-use-cases.html">Domaines d&#8217;application</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-editions.html">Éditions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-evolution-support.html">Évolution et Support des différentes versions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-versions.html">Versions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../java-resources.html">Ressources</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">How To</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../how-to/java-installation.html">Install Java</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../how-to/java-command-line.html">Command Line</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Bases de Java</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../java-application-basics-concepts.html">Concepts basiques d&#8217;une application Java</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../java-keywords.html">Mots-clés Java</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Types</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-primitive-types.html">Types primitifs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-object-types.html">Types objets</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-operators.html">Opérateurs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-arrays.html">Tableaux</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="java-strings.html">Strings</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-enums.html">Enums</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="java-big-decimal.html">Big Decimal</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../oop/java-core-principles.html">Programmation Orientée Objet</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-access-modifiers.html">Modificateurs d&#8217;accès</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-class-members.html">Classes, Variables et Méthodes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-pass-by-value.html">Passage des paramètres par valeur</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-overloading.html">Overloading</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-overriding.html">Overriding</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-constructors.html">Constructeurs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-data-encapsulation.html">Encapsulation des données</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="#oop/java-object-composition.adoc">Composition objet</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-inheritance.html">Héritage</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-abstract.html">Classes et Méthode Abstraites</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-interface.html">Interface</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-polymorphism.html">Polymorphisme</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../oop/java-object-methods.html">La classe Object</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Exceptions</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../exceptions/java-reliable-program.html">Fiabilité d&#8217;une application Java</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../exceptions/java-exceptions.html">Gestion des erreurs</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../exceptions/java-try-catch.html">Patterns try-catch</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Java</span>
+    <span class="version">1.0</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../../index.html">Java</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../index.html">1.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">Java</a></li>
+    <li>Bases de Java</li>
+    <li>Types</li>
+    <li><a href="java-strings.html">Strings</a></li>
+  </ul>
+</nav>
+</div>
+  <div class="content">
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+<article class="doc">
+<h1 class="page">Strings</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Les Strings sont des chaînes de caractères.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_un_objet_string_est_immutable"><a class="anchor" href="#_un_objet_string_est_immutable"></a>Un objet String est immutable</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Non modifiables après création</p>
+</li>
+<li>
+<p>Si on assigne une nouvelle valeur, on crée un nouvel objet &#8658; coûte cher en terme de performance</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ex: lastString = lastString + 50; // on crée un nouvel objet String</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_string_pool"><a class="anchor" href="#_string_pool"></a>String Pool</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Zone mémoire contenant tous les String littéraux (ex: "myString") pour optimiser la mémoire</p>
+</li>
+<li>
+<p>les String sont stockés dans le pool au <strong>compile-time</strong></p>
+</li>
+<li>
+<p>Ceux qui ne sont pas dans le pool sont garbage collected comme tout autre objet</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_méthodes"><a class="anchor" href="#_méthodes"></a>Méthodes</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>equals()</p>
+</li>
+<li>
+<p>equalsIgnoreCase()</p>
+</li>
+<li>
+<p>charAt()</p>
+</li>
+<li>
+<p>subString() : n&#8217;inclut pas endIndex</p>
+</li>
+<li>
+<p>indexOf()</p>
+</li>
+<li>
+<p>startsWith()</p>
+</li>
+<li>
+<p>endsWith()</p>
+</li>
+<li>
+<p>trim() : enlève espaces et tabulations au début et à la fin</p>
+</li>
+<li>
+<p>replace()</p>
+</li>
+<li>
+<p>concat()</p>
+</li>
+<li>
+<p>toUpperCase()/toLowerCase()</p>
+</li>
+<li>
+<p>split()</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_equals_vs_reference_equality"><a class="anchor" href="#_equals_vs_reference_equality"></a>Equals VS reference equality (==)</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-java hljs" data-lang="java">String x = "Hello";
+String y = "Hello";
+System.out.print(x == y); // true car les littéraux sont dans le pool (même objet)
+
+String x1 = "Hello";
+String y1 = " Hello".trim();
+System.out.print(x1 == y1); // false : les littéraux sont stockés dans le pool au compile-time et y1 est traité au run-time
+System.out.print(x1.equals(x2)); // true : on évalue l'égalité des valeurs</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_stringbuffer"><a class="anchor" href="#_stringbuffer"></a>StringBuffer</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Chaînes mutables</p>
+</li>
+<li>
+<p>Opérations plus rapides (append, insert, deleteCharAt, deleve, reverse)</p>
+</li>
+<li>
+<p><strong>Thread-safe</strong> : toutes les méthodes sont synchronisées &#8658; ralentit le programme</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_stringbuilder"><a class="anchor" href="#_stringbuilder"></a>StringBuilder</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>même chose que StringBuffer mais non thread-safe &#8658; <strong>plus rapide que StringBuffer</strong></p>
+</li>
+<li>
+<p><em>size</em> : number of characters currently in the sequence</p>
+</li>
+<li>
+<p><em>capacity</em> : number of characters than the sequence can hold (16 by default)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_stringjoiner"><a class="anchor" href="#_stringjoiner"></a>StringJoiner</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+</article>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../../_/js/site.js"></script>
+<script async src="../../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

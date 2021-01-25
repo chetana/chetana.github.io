@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SAML (Security Assertion Markup Language) :: Notes Sécurité</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">Notes Sécurité</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="security" data-version="1.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Sécurité</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Notions préliminaires</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../attaques.html">Attaques de sécurité</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Normes et Protocoles</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../oauth2/oAuth2.html">OAuth 2.0</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../jwt.html">Json Web Token (JWT)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../openid-connect/openid-connect.html">OpenID Connect</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="saml.html">SAML 2.0</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Applications</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../keycloak/keycloak.html">Keycloack</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Ressources</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tools-and-resources.html">Outils</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Sécurité</span>
+    <span class="version">1.0</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Sécurité</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Sécurité</a></li>
+    <li>Normes et Protocoles</li>
+    <li><a href="saml.html">SAML 2.0</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///Users/kevintang/Desktop/securite/security/modules/saml/pages/saml.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">SAML (Security Assertion Markup Language)</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>SAML est un <strong>protocole ouvert et standardisé pour l' échange des informations d&#8217;authentification et d&#8217;autorisation entre des entités</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_historique"><a class="anchor" href="#_historique"></a>Historique</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Basé sur XML</p>
+</li>
+<li>
+<p>Standard approuvé par le consortium OASIS</p>
+<div class="ulist">
+<ul>
+<li>
+<p>SAML 1.0 : 11/2002</p>
+</li>
+<li>
+<p>SAML 1.1 : 11/2003</p>
+</li>
+<li>
+<p>SAML 2.0 : 03/2005</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rôles_de_saml_2_0_2"><a class="anchor" href="#_rôles_de_saml_2_0_2"></a>Rôles de SAML 2.0 (2)</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Service Provider (SP)</dt>
+<dd>
+<p>fournisseur de service</p>
+</dd>
+<dt class="hdlist1">Identity Provider(IdP)</dt>
+<dd>
+<p>fournisseur d&#8217;identité et des autorisations associées</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Il y a une relation forte de confiance entre l&#8217;IdP et le SP.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_avantages"><a class="anchor" href="#_avantages"></a>Avantages</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Web SSO</p>
+</li>
+<li>
+<p>Autorisation basée sur les attributs</p>
+</li>
+<li>
+<p>Fédération d&#8217;identité</p>
+</li>
+<li>
+<p>Pas limité au protocole HTTP</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_concepts"><a class="anchor" href="#_concepts"></a>Concepts</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Assertions : les messages (à la place des access tokens)</p>
+</li>
+<li>
+<p>Protocols</p>
+</li>
+<li>
+<p>Bindings</p>
+</li>
+<li>
+<p>Profiles</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bilan"><a class="anchor" href="#_bilan"></a>Bilan</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Très vieux, ne colle plus trop avec son temps</p>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

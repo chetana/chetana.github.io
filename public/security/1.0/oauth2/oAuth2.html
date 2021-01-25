@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>OAuth 2.0 (Open Authorization) :: Notes Sécurité</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">Notes Sécurité</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="security" data-version="1.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Sécurité</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Notions préliminaires</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../attaques.html">Attaques de sécurité</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Normes et Protocoles</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="oAuth2.html">OAuth 2.0</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../jwt.html">Json Web Token (JWT)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../openid-connect/openid-connect.html">OpenID Connect</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../saml/saml.html">SAML 2.0</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Applications</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../keycloak/keycloak.html">Keycloack</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Ressources</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tools-and-resources.html">Outils</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Sécurité</span>
+    <span class="version">1.0</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Sécurité</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Sécurité</a></li>
+    <li>Normes et Protocoles</li>
+    <li><a href="oAuth2.html">OAuth 2.0</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///Users/kevintang/Desktop/securite/security/modules/oauth2/pages/oAuth2.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">OAuth 2.0 (Open Authorization)</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>OAuth 2.0 est un *protocole ouvert de délégation d&#8217;autorisation = accéder à une ressource protégée au nom de son propriétaire sans connaitre ses identifiants *. Il a pour vocation de réduire le risque d’une utilisation abusive et non autorisée des données qui peuvent transiter entre différentes applications et permet à l&#8217;utilisateur d&#8217;avoir un contrôle total sur ses données.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_historique"><a class="anchor" href="#_historique"></a>Historique</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Protocole publié en octobre 2012.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_définitions_préliminaires"><a class="anchor" href="#_définitions_préliminaires"></a>Définitions préliminaires</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Identité</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>ensemble d&#8217;attributs qui identifient d&#8217;une façon <strong>unique</strong> un individu ou une entité (machine, service)</p>
+</li>
+<li>
+<p>l&#8217;identité peut être exposée via des attributs physiques (cheveux bruns, yeux bleus&#8230;&#8203;)</p>
+</li>
+<li>
+<p>l&#8217;identité peut également varier selon le contexte (mère d&#8217;un enfant, collègue de travail&#8230;&#8203;)</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Identification</dt>
+<dd>
+<p>façon de communiquer son identité</p>
+</dd>
+<dt class="hdlist1">Authentification</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>vérification de l&#8217;identité de la personne ou de l&#8217;entité</p>
+</li>
+<li>
+<p>il existe des moyens d&#8217;authentification + ou - risqués (biométrie &lt; certificat &amp; clé &lt; password)</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Authentification basique/simple</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>login + mdp</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Authentification forte</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>au moins 2 moyens d&#8217;authentification (credentials + code aléatoire sms par exemple)</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Authentification unique / Single Sign On (SSO)</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>saisir un seul login / mdp pour plusieurs applications</p>
+</li>
+<li>
+<p>serveur d&#8217;authentification centralisé :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>c&#8217;est là où on a la persistence de la connexion une fois l&#8217;utilisateur authentifié</p>
+</li>
+<li>
+<p>ce serveur demande les credentials et fournit une session + un token à l&#8217;utilisateur qui va pouvoir accéder à ses applications</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>si on se log out, l&#8217;utilisateur n&#8217;a plus accès aux applications</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Autorisation</dt>
+<dd>
+<p>l&#8217;utilisateur est autorisé è voir une ressource s&#8217;il a un droit d&#8217;accès à une ressource</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_rôles_doauth2_4"><a class="anchor" href="#_rôles_doauth2_4"></a>Rôles d&#8217;OAuth2 (4)</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Resource Owner</dt>
+<dd>
+<p>une entité qui accorde à un client l’accès à ses données protégées = ressources</p>
+</dd>
+<dt class="hdlist1">Resource Server</dt>
+<dd>
+<p>un serveur sur lequel sont hébergées les données protégées du Resource Owner</p>
+</dd>
+<dt class="hdlist1">Client Application</dt>
+<dd>
+<p>une application de bureau, Web ou mobile souhaitant accéder aux données protégées du Resource Owner</p>
+</dd>
+<dt class="hdlist1">Authorization Server</dt>
+<dd>
+<p>un serveur qui authentifie le Resource Owner et génère un jeton d’accès (access token) d’une durée limitée pour un domaine d’application (scope) qu’il a défini</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+l&#8217;Authorization Server et le Resource Server peuvent être confondus.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+on dit qu&#8217;OAuth 2.0 est un protocole de délégation d&#8217;autorisation car le Client Application n&#8217;a aucune idée des credentials du Resource Owner.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exemple_concret"><a class="anchor" href="#_exemple_concret"></a>Exemple concret</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Les réseaux sociaux Pinterest et Facebook nous fournissent des exemples concrets du déroulement du protocole OAuth2. Pinterest offre par exemple la possibilité d’importer des contacts depuis une liste d’amis Facebook. Pinterest a besoin pour cela d’avoir accès au compte en question et aux informations qui y sont renseignées. Pour des raisons de sécurité des données évidentes, il n’est toutefois pas conseillé de communiquer le nom d’utilisateur et le mot de passe du compte Facebook à Pinterest. Dans un tel cas, Pinterest pourrait en effet accéder à tout moment et de façon illimitée aux données et aux fonctionnalités du compte Facebook. OAuth2 est utilisé pour permettre malgré tout à Pinterest d’accéder aux données nécessaires du compte Facebook :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>L’utilisateur se connecte tout d’abord à son compte Pinterest puis se rend dans les paramètres de son profil utilisateur.</p>
+</li>
+<li>
+<p>Dans la barre de menu « Réseaux sociaux », on déplace alors le bouton à côté de « Facebook » sur « Oui ».</p>
+</li>
+<li>
+<p>Pinterest demande à l’utilisateur de se connecter à Facebook et de valider l’application Pinterest. Cette action tient lieu d’autorisation.</p>
+</li>
+<li>
+<p>Pinterest demande un jeton d’accès à l’Authorization Server de Facebook et l’utilise pour accéder aux données protégées sur le Resource Server.</p>
+</li>
+<li>
+<p>Désormais, les amis Facebook importés seront également affichés dans le compte Pinterest.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_scénarios_dautorisation"><a class="anchor" href="#_scénarios_dautorisation"></a>Scénarios d&#8217;autorisation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Il en existe 4 :
+* Authorization Grant Code
+* Implicit Grant
+* Resource Owner Password Credentials Grant
+* Client Credentials Grant</p>
+</div>
+<div class="paragraph">
+<p>De plus, OAuth 2.0 est extensible.</p>
+</div>
+<div class="sect2">
+<h3 id="_workflow_authorization_code_grant_avec_exemple"><a class="anchor" href="#_workflow_authorization_code_grant_avec_exemple"></a>Workflow Authorization Code Grant avec exemple</h3>
+<div class="paragraph">
+<p><em>Autoriser l&#8217;application chtijug.org à appeler l&#8217;API Github. (ici Github représente le Resource Server et l&#8217;Authorization Server)</em></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Enregistrer l&#8217;application/le client auprès du serveur d’autorisation</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>3 informations à fournir : l&#8217;identifiant du client - le mot de passe - une ou plusieurs URLs de redirection (callback)</p>
+</li>
+<li>
+<p>Déclarer mon application chez Github qui fournit un couple <em>clientId-clientSecret</em>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Demande d&#8217;authentification au Resource Owner</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>chtijug.org redirige l&#8217;utilisateur vers l&#8217;API Github pour s&#8217;authentifier.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Demande du consentement de l&#8217;utilisateur</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Après authentification, l&#8217;utilisateur autorise l&#8217;application chtijug.org sur Github en donnant son consentement.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Le Resource Owner est redirigé vers le client avec un code d&#8217;autorisation</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Github redirige l&#8217;utilisateur vers l&#8217;url de callback en fournissant un code.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Un Access token est fourni au client en échange du code</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>chtijug.org échange le code contre un access token et peut maintenant accéder aux ressources de Github.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_préoccupations_et_mise_en_place_technique"><a class="anchor" href="#_préoccupations_et_mise_en_place_technique"></a>Préoccupations et mise en place technique</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Délégation de l&#8217;authentification</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Spring Security, OAuth, Google, Keycloak, WSO2 IS&#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Authentification</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>basique/simple ou 2 factor ou autre</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Maintien du contexte de l&#8217;authentification</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>comment maintenir l&#8217;identité de la personne &#8658; le token est véhiculé dans les headers de la requête HTTP Authorization</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Propagation de l&#8217;identité de l&#8217;utilisateur</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>dans une architecture microservices, on peut devoir propager les ressources de gateway &#8594; microservice ou encore microservice &#8594; microservice</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_limites"><a class="anchor" href="#_limites"></a>Limites</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Pour avoir des informations sur l&#8217;utilisateur, je dois appeler une API non standard.</p>
+</li>
+<li>
+<p>Pas de gestion d&#8217;identité ni d&#8217;authentification</p>
+</li>
+<li>
+<p>Pas de SSO (Single Sign Out) &#8658; cf protocole OpenID</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_bilan"><a class="anchor" href="#_bilan"></a>Bilan</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>OAuth 2.0 formalise un ensemble de mécanismes permettant à une application tierce (client) d’accéder à une ressource protégée au nom de son propriétaire (resource owner) ou en son propre nom. Cette autorisation se traduit par la délivrance d’un token d’accès (et éventuellement d’un token de rafraîchissement) qui permet au client de dialoguer avec le serveur hébergeant les ressources protégées (serveur de ressource).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_glossaire"><a class="anchor" href="#_glossaire"></a>Glossaire</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Access Token</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>chaîne de caractères unique fourni par le serveur d&#8217;autorisation permettant d&#8217;identifier le client ainsi que d&#8217;autres informations utiles durant le processus d&#8217;autorisation</p>
+</li>
+<li>
+<p>Analogie avec un billet de banque (on a juste besoin de connaître sa validité pour effectuer la transaction)</p>
+</li>
+<li>
+<p>durée de vie courte</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Refresh Token</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>permet au client d’obtenir un nouvel access token une fois que celui-ci a expire et sans l’intervention du propriétaire de la ressource protégée.</p>
+</li>
+<li>
+<p>durée de vie + longue qu&#8217;un access token</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_resources"><a class="anchor" href="#_resources"></a>Resources</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_articles"><a class="anchor" href="#_articles"></a>Articles</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://tools.ietf.org/html/rfc6749">Standard OAuth 2.0 Officiel</a></p>
+</li>
+<li>
+<p><a href="https://zestedesavoir.com/articles/1616/comprendre-oauth-2-0-par-lexemple/#:~:text=Supposons%20que%20le%20serveur%20d,utilisateur%20pour%20obtenir%20ces%20identifiants">Comprendre OAuth 2.0 par l&#8217;exemple</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>présente les 4 scénarii d&#8217;autorisation</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><a href="https://www.ionos.fr/digitalguide/serveur/securite/oauth/">OAuth : utiliser des données sur plusieurs plateformes</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vidéos"><a class="anchor" href="#_vidéos"></a>Vidéos</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=0cziL__0-K8">Maitriser sa gestion de l&#8217;identité avec Keycloak(L. Benoit, T. Recloux, S. Blanc)</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=IdO6HXc8Ung&amp;t=1319s">Authentification, confidentialité, gestion des identités (O. Mabrouki)</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>[13:48] : exemple d&#8217;utilisation d&#8217;OAuth 2.0</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

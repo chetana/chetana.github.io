@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Keycloak :: Notes Sécurité</title>
+    <meta name="generator" content="Antora 2.3.4">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+    <script>var uiRootPath = '../../../_'</script>
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="../../..">Notes Sécurité</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="security" data-version="1.0">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">Sécurité</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Notions préliminaires</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../attaques.html">Attaques de sécurité</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Normes et Protocoles</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../oauth2/oAuth2.html">OAuth 2.0</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../jwt.html">Json Web Token (JWT)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../openid-connect/openid-connect.html">OpenID Connect</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../saml/saml.html">SAML 2.0</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Applications</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="keycloak.html">Keycloack</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Ressources</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../tools-and-resources.html">Outils</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Sécurité</span>
+    <span class="version">1.0</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <a class="title" href="../index.html">Sécurité</a>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">1.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">Sécurité</a></li>
+    <li>Applications</li>
+    <li><a href="keycloak.html">Keycloack</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="file:///Users/kevintang/Desktop/securite/security/modules/keycloak/pages/keycloak.adoc">Edit this Page</a></div>
+</div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">Keycloak</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>KeyCloak est un <strong>serveur de gestion d&#8217;identité et d&#8217;authentification</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pourquoi_déléguer_sa_sécurité"><a class="anchor" href="#_pourquoi_déléguer_sa_sécurité"></a>Pourquoi déléguer sa sécurité ?</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Par souci d&#8217;économies d&#8217;échelle</p>
+<div class="ulist">
+<ul>
+<li>
+<p>le faire soi-même requiert de développer :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>écran de login</p>
+</li>
+<li>
+<p>gestion du workflow</p>
+</li>
+<li>
+<p>gestion des mots de passe</p>
+</li>
+<li>
+<p>gestion des nouveaux utilisateurs</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Vous n&#8217;êtes pas expert en sécurité</p>
+<div class="ulist">
+<ul>
+<li>
+<p>On peut penser a faire un serveur pour centraliser toute la gestion de login mais cela ne suffira sûrement pas (<em>cf anecdote avec T-Mobile Australia : cette société se la jouait mais elle ne hachait pas ses MDP</em>)</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_quest_ce_que_keycloak"><a class="anchor" href="#_quest_ce_que_keycloak"></a>Qu&#8217;est-ce que Keycloak ?</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Surcouche de WildFly (serveur d&#8217;applications)</p>
+</li>
+<li>
+<p>Développé par RedHat</p>
+</li>
+<li>
+<p>Keycloak repose en partie sur des normes et protocoles de sécurité déjà existants (OpenID)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Avantage : on se protège des trous de sécurité et on a une intéropérabilité avec les autres composants du marché.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_installation"><a class="anchor" href="#_installation"></a>Installation</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Sources</p>
+</li>
+<li>
+<p>Distributions</p>
+</li>
+<li>
+<p>Images Docker</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_fonctionnalités"><a class="anchor" href="#_fonctionnalités"></a>Fonctionnalités</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_signature"><a class="anchor" href="#_signature"></a>Signature</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Keycloak crée une paire clé publique/privée</p>
+</li>
+<li>
+<p>Il signe avec sa clé privée</p>
+</li>
+<li>
+<p>l&#8217;application dans le même realm demande la clé publique à Keycloak</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Avantage : permet à Keycloak de renouveler ses clés</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_protection_des_attaques"><a class="anchor" href="#_protection_des_attaques"></a>Protection des attaques</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Brute force detection : bloquer le compte après trop de tentatives infructueuses</p>
+</li>
+<li>
+<p>Clickjacking</p>
+</li>
+<li>
+<p>Injection SQL</p>
+</li>
+<li>
+<p>Les MDP sont hashés avec PBKDF2 (20 000 itérations)</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Absolument se mettre en HTTPS pour protéger de la majorité des attaques !
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_persistence"><a class="anchor" href="#_persistence"></a>Persistence</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Hibernate derrière</p>
+</li>
+<li>
+<p>Supporte Postgre, MySQL</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_clustering_cross_data_center"><a class="anchor" href="#_clustering_cross_data_center"></a>Clustering / Cross Data Center</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_concepts"><a class="anchor" href="#_concepts"></a>Concepts</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Realm</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>on va donner un "territoire" à sécuriser à Keycloak</p>
+</li>
+<li>
+<p>un territoire peut contenir plusieurs applications et est isolé des autres</p>
+</li>
+<li>
+<p>on peut faire du SSO sur un realm</p>
+</li>
+<li>
+<p><em>Analogie : on prend une carte avec plusieurs territoires. on navigue vers un territoire et celui-ci nous redirige vers l&#8217;ile de Keycloak dans laquelle on doit fournir nos credentials (login form). Une fois renseignés, on obtient un tampon de Keycloak et on peut aller visiter le territoire.</em></p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Console d&#8217;administration (interface web) Keycloak</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>toutes les opérations de la console sont basées sur l&#8217;API &#8658; possibilité d&#8217;automatiser les opérations</p>
+</li>
+<li>
+<p><strong>Opérations possibles :</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Création d&#8217;un realm</p>
+</li>
+<li>
+<p>Création d&#8217;un client</p>
+</li>
+<li>
+<p>Création d&#8217;un utilisateur + mdp (on peut forcer l&#8217;utilisateur à changer son mdp lors de sa première connexion)</p>
+</li>
+<li>
+<p>Customisation de la page de login dans "Realm Settings"</p>
+</li>
+<li>
+<p>Configuration OTP</p>
+</li>
+<li>
+<p>Défense du territoire</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Applications fournies par Keycloak :</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Account</em> : gestion du compte utilisateur</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Adaptateurs</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Sécurisent les applications et communiquent avec Keycloak</p>
+</li>
+<li>
+<p>S&#8217;intègrent au système de sécurité existant</p>
+</li>
+<li>
+<p>Configuration standardisée
+[source, json]
+====
+{
+    // où tourne le serveur Keycloak
+    "auth-server-url": "http://localhost:8080/auth",
+    "realm": "realm-name",
+    "resource": "client-id",
+    // application qui ne peut plus recevoir des requêtes avec un token dejà existant
+    "bearer-only": true,
+    "ssl-required": external,
+    "enable-cors": true
+}
+====</p>
+</li>
+<li>
+<p>Que font-ils?</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Gestion des Redirect (ou pas si c&#8217;est un bearer-only)</p>
+</li>
+<li>
+<p>Vérification des signatures : avoir besoin de la clé publique pour vérifier la signature du token</p>
+</li>
+<li>
+<p>Vérification des Claims : vérification du payload de notre token</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Workflow : Requête entrante</p>
+<div class="ulist">
+<ul>
+<li>
+<p>le path est-il soumis à une contrainte de sécurité ? Y a-t-il un header "Authorization"?</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>Cas 1: header absent</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Le client est-il confidential ou public?</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Echange eventuel du secret puis la redirection vers la page de login est initiee</p>
+</li>
+<li>
+<p>Le client est bearer-only &#8658; unauthorized (ex: un service REST avec lequel il n&#8217;y a pas d&#8217;intéraction humaine, le rediriger vers la page de login n&#8217;a pas de sens)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Cas 2: header présent</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>la signature est-elle valide?</p>
+</li>
+<li>
+<p>le token est-il expiré (exp)?</p>
+</li>
+<li>
+<p>vérification issuer (iss)</p>
+</li>
+<li>
+<p>vérification audience (aud)</p>
+</li>
+<li>
+<p>Matching éventuel du not-before</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Adaptateurs possibles :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Java EE / Servlet container</p>
+</li>
+<li>
+<p>Spring Boot / Spring Security</p>
+</li>
+<li>
+<p>NodeJS</p>
+</li>
+<li>
+<p>Javascript</p>
+</li>
+<li>
+<p>Servlet Filter</p>
+</li>
+<li>
+<p>Proxy</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_console_dadministration_keycloak"><a class="anchor" href="#_console_dadministration_keycloak"></a>Console d&#8217;administration Keycloak</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_realm_settings"><a class="anchor" href="#_realm_settings"></a>Realm Settings</h3>
+<div class="sect3">
+<h4 id="_security_defenses"><a class="anchor" href="#_security_defenses"></a>Security Defenses</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Brute force detection</strong> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>quelqu&#8217;un qui bombarde le serveur en testant le dictionnaire des mdp et espère tomber sur le bon &#8658; on peut locker les comptes</p>
+</li>
+<li>
+<p>un problème avec cette défense : quelqu&#8217;un peut utiliser le même mécanisme pour locker tous les comptes de vos users</p>
+</li>
+<li>
+<p>la log est parsable par <strong>fail to ban</strong> : locker les gens qui font trop d erreurs de mdp</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_clients"><a class="anchor" href="#_clients"></a>Clients</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>3 types d&#8217;accès au client :</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>public</strong> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>la sécurité du client public repose uniquement sur l&#8217;url de redirection (c&#8217;est l&#8217;url qui va récupérer le code et l&#8217;échanger contre le token sans s&#8217;identifier)</p>
+</li>
+<li>
+<p>pour des applications single page ou mobile</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>confidential</strong> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>on sécurise l&#8217;échange avec des secrets/credentials</p>
+</li>
+<li>
+<p>pour des applications server side</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>bearer-only</strong> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>application qui ne peut plus recevoir des requêtes avec un token dejà existant</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>La partie <em>Installation</em> permet d avoir les configurations du client que l&#8217;on peut mettre dans l&#8217;application.yml du Springboot.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_gestion_des_cors"><a class="anchor" href="#_gestion_des_cors"></a>Gestion des CORS</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Web Origins</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_gestion_des_rôles"><a class="anchor" href="#_gestion_des_rôles"></a>Gestion des rôles</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>au niveau du territoire</p>
+</li>
+<li>
+<p>au niveau specifique de l&#8217;app</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_authentication"><a class="anchor" href="#_authentication"></a>Authentication</h3>
+<div class="sect3">
+<h4 id="_politique_des_mdp_password_policy"><a class="anchor" href="#_politique_des_mdp_password_policy"></a>Politique des MDP (Password Policy)</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>on peut faire de l&#8217;authentification 2 facteurs par OTP</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_identity_providers"><a class="anchor" href="#_identity_providers"></a>Identity Providers</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Keycloak peut déléguer l&#8217;authentification à quelqu&#8217;un d&#8217;autre = <strong>Social Login</strong></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+On pourrait même ne plus afficher le formulaire Keycloak et être automatiquement redirigé vers une page de login Google
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_user_federation"><a class="anchor" href="#_user_federation"></a>User Federation</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>pour migrer des utilisateurs LDAP par exemple dans Keycloak</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_exemples_dutilisations"><a class="anchor" href="#_exemples_dutilisations"></a>Exemples d&#8217;utilisations</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_sécuriser_une_application_spring_boot"><a class="anchor" href="#_sécuriser_une_application_spring_boot"></a>Sécuriser une application Spring Boot</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>On peut partir d&#8217;un projet start.spring.io pour les dépendances</p>
+</li>
+<li>
+<p>Pour intégrer Keycloak avec Spring Boot, il existe 2 adapters différents :</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>le premier situé juste au niveau de SpringBoot et sécurise le serveur web utilisé par Springboot (Tomcat, Undertow, Jetty)</p>
+</li>
+<li>
+<p>l&#8217;autre se plug sur Spring Security</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">configuration de Keycloack dans l&#8217;application.yml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">keycloak:
+    # URL du serveur d'authentification
+    auth-server-url: http://localhost:8080/auth
+    # territoire
+    realm: devoxx
+    # identifiant de l'application = client à déclarer dans Keycloak
+    resource: beer-boot-app
+    # correspond à ce qu'on peut afficher en tant qu'identifiant de Keycloak (nom, uuid...)
+    principal-attribute: name
+    # si on a défini l'access type du client à confidential, on a besoin du secret
+    credentials:
+        secret: 0e40556a-0563-XXXX</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sécuriser_une_application_angular"><a class="anchor" href="#_sécuriser_une_application_angular"></a>Sécuriser une application Angular</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>librairie JS</p>
+</li>
+<li>
+<p>on appelle init()</p>
+</li>
+<li>
+<p>suis-je authentifié ? OK sinon redirection
+token du callback récupéré</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_etendre_keycloak"><a class="anchor" href="#_etendre_keycloak"></a>Etendre Keycloak</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_personalisation_du_thème"><a class="anchor" href="#_personalisation_du_thème"></a>Personalisation du thème</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>il faut désactiver les caches dans le fichier de configuration, redémarrer Keycloak et aller dans le le dossier themes pour ajouter nos dossiers/fichiers</p>
+</li>
+<li>
+<p>Onglet Realm Settings/ Themes : on peut customiser les pages de Login, Account, Email</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_service_provider_interface_spi"><a class="anchor" href="#_service_provider_interface_spi"></a>Service Provider Interface (SPI)</h3>
+<div class="paragraph">
+<p>Toute une série d&#8217;interfaces pour étendre les features au niveau de Keycloak.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Développer son SPI</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Implémenter son ProviderFactory</p>
+</li>
+<li>
+<p>Implémenter son Provider</p>
+</li>
+<li>
+<p>Définir META-INF/services/org.keycloak&#8230;&#8203;ProviderFactory</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Déployer son SPI</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Déposer l&#8217;archive dans deployments</p>
+</li>
+<li>
+<p>Déployer via le système de module</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_resources"><a class="anchor" href="#_resources"></a>Resources</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_podcasts"><a class="anchor" href="#_podcasts"></a>Podcasts</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://lescastcodeurs.com/2017/10/16/lcc-179-interview-sur-keycloak-avec-sebastien-blanc/">Les Cast Codeurs: Interview sur Keycloack avec Sébastien BLANC</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vidéos"><a class="anchor" href="#_vidéos"></a>Vidéos</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.youtube.com/watch?v=0cziL__0-K8">Maitriser sa gestion de l&#8217;identité avec Keycloak (L. Benoit, T. Recloux, S. Blanc)</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>[39:15] : installation et déploiement de Keycloak</p>
+</li>
+<li>
+<p>[41:28] : présentation de la console d&#8217;administration Keycloak</p>
+</li>
+<li>
+<p>[43:00] : création d&#8217;un realm</p>
+</li>
+<li>
+<p>[43:30] : exemple de sécurisation d&#8217;une application server-side Spring Boot</p>
+<div class="ulist">
+<ul>
+<li>
+<p>configuration Spring Security + Keycloak (application.yml)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>[55:00] : création d&#8217;un client dans l&#8217;interface</p>
+</li>
+<li>
+<p>[55:50] : création d&#8217;un user + mdp</p>
+</li>
+<li>
+<p>[1:01:00] : customisation de la page de login de Keycloak</p>
+</li>
+<li>
+<p>[1:04:00] : génération d&#8217;un access token via curl en ligne de commande</p>
+</li>
+<li>
+<p>[1:38:09] : configuration de l&#8217;OTP pour un utilisateur</p>
+</li>
+<li>
+<p>[1:49:30] : exemple d&#8217;installation d&#8217;un adaptateur Keycloak Wildfly &amp;&amp; sécurisation d&#8217;un service REST d&#8217;une application JEE</p>
+</li>
+<li>
+<p>[2:05:17] : exemple de sécurisation d&#8217;une app web AngularJS</p>
+</li>
+<li>
+<p>[2:16:00] : ajout d&#8217;un bouton "se connecter" Google au formulaire de login Keycloak</p>
+</li>
+<li>
+<p>[2:21:00] : exemple de migration des utilisateurs d&#8217;un annuaire LDAP dans Keycloak</p>
+</li>
+<li>
+<p>[2:24:20] : exemple de personalisation de thèmes</p>
+</li>
+<li>
+<p>[2:35:00] : liste SPI disponibles dans la vidéo (répertoire d&#8217;exemple sur Git Keycloak dans examples pour chaque SPI)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_glossaire"><a class="anchor" href="#_glossaire"></a>Glossaire</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">LDAP</dt>
+<dd>
+<p>autre produit sur la sécurité mais avec des protocoles moins flexibles que Keycloak</p>
+</dd>
+<dt class="hdlist1">CORS</dt>
+<dd>
+<p>Cross Origin Resource Sharing</p>
+</dd>
+<dt class="hdlist1">OTP (One Time Password)</dt>
+<dd>
+<p>QR code</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
